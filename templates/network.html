@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Network Analysis
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+<h2 class="text-center">
+
+Economic Network Analysis
+
+</h2>
+
+<hr>
+
+<div class="card shadow">
+
+<div class="card-header bg-dark text-white">
+
+Agent Network
+
+</div>
+
+<div class="card-body text-center">
+
+<img
+
+src="{{ url_for('static', filename='charts/network.png') }}"
+
+class="img-fluid">
+
+</div>
+
+</div>
+
+<br>
+
+<div class="card shadow">
+
+<div class="card-header bg-success text-white">
+
+Network Description
+
+</div>
+
+<div class="card-body">
+
+<ul>
+
+<li>Government issues bonds.</li>
+
+<li>Banks purchase government bonds.</li>
+
+<li>Investors trade bonds.</li>
+
+<li>Households receive wealth transfers.</li>
+
+<li>Economic interactions influence debt and bond yields.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,226 @@
+{% extends "base.html" %}
+
+{% block title %}
+About
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        About the Research
+    </h1>
+
+    <p class="lead text-center">
+        Modelling UK Government Debt, Bond Markets and Wealth Transfer using Agent-Based Simulation
+    </p>
+
+    <hr>
+
+    <!-- Introduction -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+            Introduction
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Government debt represents the total amount of money borrowed by the
+                UK Government to finance public expenditure whenever public spending
+                exceeds tax revenue. Governments borrow by issuing Government Bonds
+                (Gilts), which are purchased by banks, institutional investors,
+                pension funds and households.
+            </p>
+
+            <p>
+                Increasing government debt influences taxation, public expenditure,
+                inflation, interest rates and long-term economic growth.
+                Understanding these relationships is essential for evaluating fiscal
+                sustainability and economic policy.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Government Bond Market -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-success text-white">
+            UK Government Bond Market
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Government Bonds are debt securities issued by the UK Government to
+                finance borrowing requirements. Investors purchasing these bonds
+                receive regular interest payments until maturity.
+            </p>
+
+            <p>
+                Bond yields respond to changes in inflation, monetary policy,
+                investor confidence and market demand. Rising yields increase the
+                government's borrowing costs, whereas lower yields reduce financing
+                costs.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Wealth Transfer -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-warning">
+            Wealth Transfer
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Government borrowing redistributes wealth throughout the economy.
+                Interest payments are transferred to investors holding government
+                bonds, while taxation and government expenditure affect household
+                income and overall economic welfare.
+            </p>
+
+            <p>
+                The interaction between Government, Banks, Investors and Households
+                determines how wealth circulates through the financial system.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Agent Based Modelling -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-info text-white">
+            Agent-Based Modelling
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Agent-Based Modelling (ABM) is a computational modelling technique
+                in which individual economic agents interact according to behavioural
+                rules. Instead of analysing the economy as one system, ABM models
+                decisions made by individual participants.
+            </p>
+
+            <p>
+                This research models four economic agents:
+            </p>
+
+            <ul>
+
+                <li>Government</li>
+                <li>Banks</li>
+                <li>Investors</li>
+                <li>Households</li>
+
+            </ul>
+
+            <p>
+                Their interactions determine Government Debt, Bond Yield and Wealth
+                Distribution over time.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Monte Carlo -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-secondary text-white">
+            Monte Carlo Simulation
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Monte Carlo Simulation repeatedly executes the Agent-Based Model
+                under randomly changing economic conditions. This allows uncertainty
+                analysis and evaluates the robustness of simulation results.
+            </p>
+
+            <p>
+                The distribution of Government Debt, Bond Yield and Wealth outcomes
+                helps identify possible future economic scenarios.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Network Analysis -->
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-dark text-white">
+            Network Analysis
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                Network Analysis visualises relationships among Government, Banks,
+                Investors and Households. These economic connections illustrate the
+                movement of debt, bond investments, interest payments and wealth
+                transfer throughout the economy.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- Research Objectives -->
+
+    <div class="card shadow mb-5">
+
+        <div class="card-header bg-primary text-white">
+            Research Objectives
+        </div>
+
+        <div class="card-body">
+
+            <ol>
+
+                <li>Analyse historical UK Government Debt.</li>
+
+                <li>Model Government Bond Market behaviour.</li>
+
+                <li>Simulate interactions between Government, Banks, Investors and Households.</li>
+
+                <li>Investigate Wealth Transfer within the UK economy.</li>
+
+                <li>Evaluate uncertainty using Monte Carlo Simulation.</li>
+
+                <li>Visualise economic relationships using Network Analysis.</li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

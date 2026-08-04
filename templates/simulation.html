@@ -1,0 +1,261 @@
+{% extends "base.html" %}
+
+{% block title %}
+Agent-Based Simulation
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="text-center">
+        Agent-Based Simulation
+    </h2>
+
+    <hr>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            Simulation Parameters
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST" action="/simulation">
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Initial Government Debt (£)
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="government_debt"
+                            value="100000000"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Bond Issue Amount (£)
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="bond_issue"
+                            value="10000"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Interest Rate (%)
+                        </label>
+
+                        <input
+                            type="number"
+                            step="0.1"
+                            class="form-control"
+                            name="interest_rate"
+                            value="4"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label">
+                            Simulation Steps
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="steps"
+                            value="100"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Banks
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="banks"
+                            value="5"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Investors
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="investors"
+                            value="20"
+                            required>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+                            Households
+                        </label>
+
+                        <input
+                            type="number"
+                            class="form-control"
+                            name="households"
+                            value="100"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="text-center">
+
+                    <button
+                        type="submit"
+                        class="btn btn-success btn-lg">
+
+                        Run Simulation
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    {% if results %}
+
+    <div class="card shadow">
+
+        <div class="card-header bg-success text-white">
+
+            Simulation Results
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row text-center">
+
+                <div class="col-md-4">
+
+                    <h5>Government Debt</h5>
+
+                    <h3>
+
+                        £ {{ "{:,.0f}".format(results["Government Debt"]) }}
+
+                    </h3>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>Bond Yield</h5>
+
+                    <h3>
+
+                        {{ "%.2f"|format(results["Bond Yield"]) }} %
+
+                    </h3>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <h5>Household Wealth</h5>
+
+                    <h3>
+
+                        £ {{ "{:,.0f}".format(results["Household Wealth"]) }}
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="row text-center">
+
+                <div class="col-md-6">
+
+                    <h5>Investor Wealth</h5>
+
+                    <h3>
+
+                        £ {{ "{:,.0f}".format(results["Investor Wealth"]) }}
+
+                    </h3>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h5>Bank Capital</h5>
+
+                    <h3>
+
+                        £ {{ "{:,.0f}".format(results["Bank Capital"]) }}
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

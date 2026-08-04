@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}
+Monte Carlo Simulation
+{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="text-center">
+        Monte Carlo Simulation
+    </h2>
+
+    <p class="text-center text-muted">
+        Perform repeated Agent-Based Simulations to analyse uncertainty in
+        Government Debt, Bond Yield and Wealth Distribution.
+    </p>
+
+    <hr>
+
+    <div class="card shadow mb-4">
+
+        <div class="card-header bg-primary text-white">
+
+            Monte Carlo Parameters
+
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST" action="/montecarlo">
+
+                <div class="row">
+
+                    <div class="col-md-4">
+
+                        <label class="form-label">
+
+                            Number of Simulations
+
+                        </label>
+
+                        <input
+
+                            type="number"
+
+                            name="iterations"
+
+                            class="form-control"
+
+                            value="100"
+
+                            required>
+
+                    </div>
+
+                </div>
+
+                <br>
+
+                <button
+
+                    class="btn btn-success btn-lg"
+
+                    type="submit">
+
+                    Run Monte Carlo
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+{% if table %}
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-success text-white">
+
+Simulation Results
+
+</div>
+
+<div class="card-body">
+
+{{ table|safe }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+
+{% if summary %}
+
+<div class="card shadow mb-4">
+
+<div class="card-header bg-info text-white">
+
+Summary Statistics
+
+</div>
+
+<div class="card-body">
+
+{{ summary|safe }}
+
+</div>
+
+</div>
+
+{% endif %}
+
+
+{% if chart %}
+
+<div class="card shadow">
+
+<div class="card-header bg-dark text-white">
+
+Government Debt Distribution
+
+</div>
+
+<div class="card-body text-center">
+
+<img
+
+src="{{ url_for('static', filename='charts/montecarlo_debt.png') }}"
+
+class="img-fluid">
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
